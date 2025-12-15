@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ASSUME cs:code, ds:data,ss:stiva
 STIVA segment PARA STACK 'STACK'
  DB 200h dup(0)
@@ -125,3 +126,17 @@ CTV_BAD:
 CHAR_TO_VAL ENDP
 code ends
 end start
+=======
+ASSUME cs:code,ds:data
+data segment
+;datele de intrare
+data ends
+code segment
+start:
+mov ax,data
+move ds,ax
+mov ax,4C00h
+int 21h
+code ends
+end start
+>>>>>>> 4690d53ec823441927d1223ca67dfdb04ff9902a
