@@ -139,4 +139,3 @@ mov ax,4C00h
 int 21h
 code ends
 end start
->>>>>>> 4690d53ec823441927d1223ca67dfdb04ff9902a
