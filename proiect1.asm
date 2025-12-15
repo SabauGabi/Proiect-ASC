@@ -14,6 +14,15 @@ DATA SEGMENT
     msg_rotiri      db 13,10,13,10,'Sirul dupa rotiri (Binar | Hex):',13,10,'$'
     newline_str     db 13,10,'$'
     bar_str         db ' | $'
+ASSUME cs:code, ds:data,ss:stiva
+STIVA segment PARA STACK 'STACK'
+ DB 200h dup(0)
+ STIVA ends
+data segment
+msg_intro       db 13,10,'Introduceti octetii in format HEX (8-16 valori, ex: 3F 1A 0B).',13,10,' Separati prin spatiu: $'
+    msg_eroare      db 13,10,'EROARE: Numar incorect de octeti! Trebuie intre 8 si 16.',13,10,'$'
+    msg_invalid     db 13,10,'EROARE: Format HEX invalid! Folositi doar 0-9, A-F si separati cu spatiu.',13,10,'$'
+    msg_succes      db 13,10,'Datele au fost citite si convertite in memorie.',13,10,'$'
 
     citire          db 60, ?, 60 dup(?)
     sir_octeti      db 16 dup(0)
